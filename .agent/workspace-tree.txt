@@ -1,0 +1,185 @@
+Folder PATH listing for volume Windows
+Volume serial number is 2047-2087
+C:\DEVSPO
++---.agent
+|   |   AgentDescriptions.json
+|   |   ProjectManifest.md
+|   |   SystemInstructions.md
+|   |   workspace-scan-raw.json
+|   |   workspace-tree.txt
+|   |   
+|   \---workflows
+|           setup.workflow.md
+|           
++---.vscode-agent
+|   \---99_archive
++---Backup_KeyboardFix_20250930_150222
+|   |   AutoHotInterception.ahk
+|   |   AutoHotInterception.dll
+|   |   CHANGELOG.md
+|   |   Context Example.ahk
+|   |   DisableInternalCtrl.ahk
+|   |   DisableLaptopLeftCtrl.ahk
+|   |   DisableLaptopLeftCtrl_Enhanced.ahk
+|   |   LICENSE
+|   |   Monitor.ahk
+|   |   README.md
+|   |   SelectiveLeftCtrlBlocker.ahk
+|   |   SubscribeAll Example.ahk
+|   |   Subscription Example.ahk
+|   |   test.ahk
+|   |   TROUBLESHOOTING.md
+|   |   
+|   +---AHK v1
+|   |   |   Combined Example.ahk
+|   |   |   Context Example.ahk
+|   |   |   Monitor.ahk
+|   |   |   SubscribeAbsolute dragging example.ahk
+|   |   |   SubscribeAbsolute example.ahk
+|   |   |   SubscribeAll Example.ahk
+|   |   |   Subscription Example.ahk
+|   |   |   TabletButtonBuilder.ahk
+|   |   |   TabletButtons.ahk
+|   |   |   Unsubscription Example.ahk
+|   |   |   
+|   |   +---Development Tools
+|   |   |       AhiScanCodeTester.ahk
+|   |   |       AhkScanCodeTester.ahk
+|   |   |       
+|   |   +---Lib
+|   |   |   |   AutoHotInterception.ahk
+|   |   |   |   CLR.ahk
+|   |   |   |   Unblocker.ps1
+|   |   |   |   
+|   |   |   +---x64
+|   |   |   |       Readme.txt
+|   |   |   |       
+|   |   |   \---x86
+|   |   |           Readme.txt
+|   |   |           
+|   |   \---TabletLib
+|   |           JSON.ahk
+|   |           TabletLib.ahk
+|   |           
+|   +---AHK v2
+|   +---Common
+|   |   \---Lib
+|   |           AutoHotInterception.dll
+|   |           
+|   \---Lib
+|       |   AutoHotInterception.ahk
+|       |   AutoHotInterception.dll
+|       |   CLR.ahk
+|       |   Unblocker.ps1
+|       |   
+|       +---x64
+|       |       interception.dll
+|       |       
+|       \---x86
++---Interception
+|   +---arksystem boot
+|   |       ArkSystem-DB-Learning-Strategy-Analysis_v1.0.md
+|   |       
+|   +---command line installer
+|   |       install-interception.exe
+|   |       
+|   +---library
+|   |   |   interception.h
+|   |   |   
+|   |   +---x64
+|   |   |       interception.dll
+|   |   |       interception.lib
+|   |   |       
+|   |   \---x86
+|   |           interception.dll
+|   |           interception.lib
+|   |           
+|   +---licenses
+|   |   +---commercial-usage
+|   |   |       Interception API.pdf
+|   |   |       Interception.pdf
+|   |   |       
+|   |   \---non-commercial-usage
+|   |           LGPL 3.0.txt
+|   |           
+|   \---samples
+|       \---x86
+|               axes.exe
+|               cadstop.exe
+|               caps2esc.exe
+|               hardwareid.exe
+|               identify.exe
+|               interception.dll
+|               mathpointer.exe
+|               x2y.exe
+|               
+\---キーボード修正スクリプト
+    |   AutoHotInterception.ahk
+    |   AutoHotInterception.dll
+    |   CHANGELOG.md
+    |   CompleteSetup.ps1
+    |   Context Example.ahk
+    |   CreateService.ps1
+    |   CreateWakeUpTask.ps1
+    |   DisableInternalCtrl.ahk
+    |   DisableLaptopLeftCtrl.ahk
+    |   DisableLaptopLeftCtrl_Enhanced.ahk
+    |   Emergency_Recovery.bat
+    |   LICENSE
+    |   LockScreenProtection.ps1
+    |   Monitor.ahk
+    |   OptimizePowerSettings.ps1
+    |   README.md
+    |   SelectiveLeftCtrlBlocker.ahk
+    |   SubscribeAll Example.ahk
+    |   Subscription Example.ahk
+    |   test.ahk
+    |   TestRecoveryProcedure.ps1
+    |   TROUBLESHOOTING.md
+    |   
+    +---AHK v1
+    |   |   Combined Example.ahk
+    |   |   Context Example.ahk
+    |   |   Monitor.ahk
+    |   |   SubscribeAbsolute dragging example.ahk
+    |   |   SubscribeAbsolute example.ahk
+    |   |   SubscribeAll Example.ahk
+    |   |   Subscription Example.ahk
+    |   |   TabletButtonBuilder.ahk
+    |   |   TabletButtons.ahk
+    |   |   Unsubscription Example.ahk
+    |   |   
+    |   +---Development Tools
+    |   |       AhiScanCodeTester.ahk
+    |   |       AhkScanCodeTester.ahk
+    |   |       
+    |   +---Lib
+    |   |   |   AutoHotInterception.ahk
+    |   |   |   CLR.ahk
+    |   |   |   Unblocker.ps1
+    |   |   |   
+    |   |   +---x64
+    |   |   |       Readme.txt
+    |   |   |       
+    |   |   \---x86
+    |   |           Readme.txt
+    |   |           
+    |   \---TabletLib
+    |           JSON.ahk
+    |           TabletLib.ahk
+    |           
+    +---AHK v2
+    +---Common
+    |   \---Lib
+    |           AutoHotInterception.dll
+    |           
+    \---Lib
+        |   AutoHotInterception.ahk
+        |   AutoHotInterception.dll
+        |   CLR.ahk
+        |   Unblocker.ps1
+        |   
+        +---x64
+        |       interception.dll
+        |       
+        \---x86

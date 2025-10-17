@@ -1,0 +1,908 @@
+[
+  {
+    "FullName": "C:\\devspo\\.agent",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-10-17T19:23:11.8987206+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.vscode-agent",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-10-17T19:12:35.153036+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.7565238+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-10-17T18:42:02.9788623+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T18:31:33.6272972+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.agent\\workflows",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-10-17T19:24:15.1009948+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.agent\\AgentDescriptions.json",
+    "Type": "File",
+    "Length": 7003,
+    "LastWriteTime": "2025-10-17T19:28:53.1269772+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.agent\\ProjectManifest.md",
+    "Type": "File",
+    "Length": 6975,
+    "LastWriteTime": "2025-10-17T19:28:52.9798451+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.agent\\SystemInstructions.md",
+    "Type": "File",
+    "Length": 7828,
+    "LastWriteTime": "2025-10-17T19:28:53.0321092+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.agent\\workspace-scan-raw.json",
+    "Type": "File",
+    "Length": 0,
+    "LastWriteTime": "2025-10-17T19:54:45.2720913+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.agent\\workflows\\setup.workflow.md",
+    "Type": "File",
+    "Length": 8761,
+    "LastWriteTime": "2025-10-17T19:28:53.208632+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\.vscode-agent\\99_archive",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-10-17T19:12:35.153036+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3546918+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v2",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3853619+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Common",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3889773+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.6625838+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AutoHotInterception.ahk",
+    "Type": "File",
+    "Length": 845,
+    "LastWriteTime": "2025-09-22T14:36:46.8515807+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AutoHotInterception.dll",
+    "Type": "File",
+    "Length": 36352,
+    "LastWriteTime": "2025-09-22T15:25:44.7784554+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\CHANGELOG.md",
+    "Type": "File",
+    "Length": 7499,
+    "LastWriteTime": "2025-09-22T15:25:44.8919137+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Context Example.ahk",
+    "Type": "File",
+    "Length": 397,
+    "LastWriteTime": "2025-09-22T15:25:44.7894542+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\DisableInternalCtrl.ahk",
+    "Type": "File",
+    "Length": 954,
+    "LastWriteTime": "2025-09-23T17:43:02.6831705+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\DisableLaptopLeftCtrl_Enhanced.ahk",
+    "Type": "File",
+    "Length": 11716,
+    "LastWriteTime": "2025-09-23T19:42:02.0737082+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\DisableLaptopLeftCtrl.ahk",
+    "Type": "File",
+    "Length": 6564,
+    "LastWriteTime": "2025-09-23T19:42:02.060705+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\LICENSE",
+    "Type": "File",
+    "Length": 1068,
+    "LastWriteTime": "2025-09-22T15:25:44.9207092+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Monitor.ahk",
+    "Type": "File",
+    "Length": 6522,
+    "LastWriteTime": "2025-09-22T15:25:44.7959409+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\README.md",
+    "Type": "File",
+    "Length": 20955,
+    "LastWriteTime": "2025-09-22T15:25:44.9277062+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\SelectiveLeftCtrlBlocker.ahk",
+    "Type": "File",
+    "Length": 11372,
+    "LastWriteTime": "2025-09-23T19:42:02.0637036+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\SubscribeAll Example.ahk",
+    "Type": "File",
+    "Length": 527,
+    "LastWriteTime": "2025-09-22T15:25:44.8044539+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Subscription Example.ahk",
+    "Type": "File",
+    "Length": 299,
+    "LastWriteTime": "2025-09-22T15:25:44.8128915+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\test.ahk",
+    "Type": "File",
+    "Length": 1368,
+    "LastWriteTime": "2025-09-22T15:25:44.8209967+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\TROUBLESHOOTING.md",
+    "Type": "File",
+    "Length": 4182,
+    "LastWriteTime": "2025-09-23T19:42:02.060705+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Development Tools",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3136922+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3505462+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\TabletLib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.38236+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Combined Example.ahk",
+    "Type": "File",
+    "Length": 634,
+    "LastWriteTime": "2025-09-22T15:25:44.5431555+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Context Example.ahk",
+    "Type": "File",
+    "Length": 381,
+    "LastWriteTime": "2025-09-22T15:25:44.558519+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Monitor.ahk",
+    "Type": "File",
+    "Length": 6419,
+    "LastWriteTime": "2025-09-22T15:25:44.5678583+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\SubscribeAbsolute dragging example.ahk",
+    "Type": "File",
+    "Length": 1830,
+    "LastWriteTime": "2025-09-22T15:25:44.5787694+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\SubscribeAbsolute example.ahk",
+    "Type": "File",
+    "Length": 1413,
+    "LastWriteTime": "2025-09-22T15:25:44.5881598+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\SubscribeAll Example.ahk",
+    "Type": "File",
+    "Length": 544,
+    "LastWriteTime": "2025-09-22T15:25:44.59716+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Subscription Example.ahk",
+    "Type": "File",
+    "Length": 307,
+    "LastWriteTime": "2025-09-22T15:25:44.6059589+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\TabletButtonBuilder.ahk",
+    "Type": "File",
+    "Length": 3792,
+    "LastWriteTime": "2025-09-22T15:25:44.6158391+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\TabletButtons.ahk",
+    "Type": "File",
+    "Length": 1445,
+    "LastWriteTime": "2025-09-22T15:25:44.6240556+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Unsubscription Example.ahk",
+    "Type": "File",
+    "Length": 738,
+    "LastWriteTime": "2025-09-22T15:25:44.6317028+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Development Tools\\AhiScanCodeTester.ahk",
+    "Type": "File",
+    "Length": 2922,
+    "LastWriteTime": "2025-09-22T15:25:44.6457963+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Development Tools\\AhkScanCodeTester.ahk",
+    "Type": "File",
+    "Length": 667,
+    "LastWriteTime": "2025-09-22T15:25:44.6543198+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib\\x64",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3475828+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib\\x86",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3515452+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib\\AutoHotInterception.ahk",
+    "Type": "File",
+    "Length": 7398,
+    "LastWriteTime": "2025-09-22T15:25:44.6720495+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib\\CLR.ahk",
+    "Type": "File",
+    "Length": 5732,
+    "LastWriteTime": "2025-09-22T15:25:44.6804451+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib\\Unblocker.ps1",
+    "Type": "File",
+    "Length": 47,
+    "LastWriteTime": "2025-09-22T15:25:44.6874451+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib\\x64\\Readme.txt",
+    "Type": "File",
+    "Length": 180,
+    "LastWriteTime": "2025-09-22T15:25:44.7124139+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\Lib\\x86\\Readme.txt",
+    "Type": "File",
+    "Length": 180,
+    "LastWriteTime": "2025-09-22T15:25:44.7309434+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\TabletLib\\JSON.ahk",
+    "Type": "File",
+    "Length": 11255,
+    "LastWriteTime": "2025-09-22T15:25:44.7501041+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\AHK v1\\TabletLib\\TabletLib.ahk",
+    "Type": "File",
+    "Length": 777,
+    "LastWriteTime": "2025-09-22T15:25:44.7570638+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Common\\Lib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.3929761+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Common\\Lib\\AutoHotInterception.dll",
+    "Type": "File",
+    "Length": 36352,
+    "LastWriteTime": "2025-09-22T15:25:44.913313+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib\\x64",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.6595835+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib\\x86",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-30T15:02:35.6625838+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib\\AutoHotInterception.ahk",
+    "Type": "File",
+    "Length": 7472,
+    "LastWriteTime": "2025-09-22T15:25:44.8362895+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib\\AutoHotInterception.dll",
+    "Type": "File",
+    "Length": 36352,
+    "LastWriteTime": "2025-09-22T15:25:44.7784554+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib\\CLR.ahk",
+    "Type": "File",
+    "Length": 5106,
+    "LastWriteTime": "2025-09-22T15:25:44.8437263+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib\\Unblocker.ps1",
+    "Type": "File",
+    "Length": 47,
+    "LastWriteTime": "2025-09-22T15:25:44.8517246+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Backup_KeyboardFix_20250930_150222\\Lib\\x64\\interception.dll",
+    "Type": "File",
+    "Length": 11264,
+    "LastWriteTime": "2025-09-22T15:25:44.8697557+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\arksystem boot",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-10-17T18:42:06.1057801+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\command line installer",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.9548372+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.8482653+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\licenses",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.9390056+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.971561+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\arksystem boot\\ArkSystem-DB-Learning-Strategy-Analysis_v1.0.md",
+    "Type": "File",
+    "Length": 7619,
+    "LastWriteTime": "2025-10-17T13:39:04.5269621+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\command line installer\\install-interception.exe",
+    "Type": "File",
+    "Length": 470528,
+    "LastWriteTime": "2025-09-22T14:42:53.9618365+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library\\x64",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.8070711+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library\\x86",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.8951665+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library\\interception.h",
+    "Type": "File",
+    "Length": 7601,
+    "LastWriteTime": "2025-09-22T14:42:53.7399093+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library\\x64\\interception.dll",
+    "Type": "File",
+    "Length": 11264,
+    "LastWriteTime": "2025-09-22T14:42:53.8163887+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library\\x64\\interception.lib",
+    "Type": "File",
+    "Length": 5174,
+    "LastWriteTime": "2025-09-22T14:42:53.7899675+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library\\x86\\interception.dll",
+    "Type": "File",
+    "Length": 10752,
+    "LastWriteTime": "2025-09-22T14:42:53.9003195+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\library\\x86\\interception.lib",
+    "Type": "File",
+    "Length": 5232,
+    "LastWriteTime": "2025-09-22T14:42:53.8766204+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\licenses\\commercial-usage",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.9319282+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\licenses\\non-commercial-usage",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:53.9429987+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\licenses\\commercial-usage\\Interception API.pdf",
+    "Type": "File",
+    "Length": 22419,
+    "LastWriteTime": "2025-09-22T14:42:53.9330051+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\licenses\\commercial-usage\\Interception.pdf",
+    "Type": "File",
+    "Length": 78798,
+    "LastWriteTime": "2025-09-22T14:42:53.9274129+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\licenses\\non-commercial-usage\\LGPL 3.0.txt",
+    "Type": "File",
+    "Length": 7651,
+    "LastWriteTime": "2025-09-22T14:42:53.9439982+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T14:42:54.033216+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\axes.exe",
+    "Type": "File",
+    "Length": 8704,
+    "LastWriteTime": "2025-09-22T14:42:54.020607+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\cadstop.exe",
+    "Type": "File",
+    "Length": 29184,
+    "LastWriteTime": "2025-09-22T14:42:53.9808686+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\caps2esc.exe",
+    "Type": "File",
+    "Length": 15872,
+    "LastWriteTime": "2025-09-22T14:42:54.0115553+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\hardwareid.exe",
+    "Type": "File",
+    "Length": 30720,
+    "LastWriteTime": "2025-09-22T14:42:53.976521+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\identify.exe",
+    "Type": "File",
+    "Length": 40960,
+    "LastWriteTime": "2025-09-22T14:42:54.0362077+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\interception.dll",
+    "Type": "File",
+    "Length": 10752,
+    "LastWriteTime": "2025-09-22T14:42:54.0020781+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\mathpointer.exe",
+    "Type": "File",
+    "Length": 44544,
+    "LastWriteTime": "2025-09-22T14:42:53.9881158+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\Interception\\samples\\x86\\x2y.exe",
+    "Type": "File",
+    "Length": 8192,
+    "LastWriteTime": "2025-09-22T14:42:54.0292069+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.7414504+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v2",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-23T10:03:31.2719155+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Common",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.9063132+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-23T10:30:46.6731266+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AutoHotInterception.ahk",
+    "Type": "File",
+    "Length": 845,
+    "LastWriteTime": "2025-09-22T14:36:46.8515807+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AutoHotInterception.dll",
+    "Type": "File",
+    "Length": 36352,
+    "LastWriteTime": "2025-09-22T15:25:44.7784554+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\CHANGELOG.md",
+    "Type": "File",
+    "Length": 7499,
+    "LastWriteTime": "2025-09-22T15:25:44.8919137+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\CompleteSetup.ps1",
+    "Type": "File",
+    "Length": 1580,
+    "LastWriteTime": "2025-09-30T18:47:42.2230508+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Context Example.ahk",
+    "Type": "File",
+    "Length": 397,
+    "LastWriteTime": "2025-09-22T15:25:44.7894542+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\CreateService.ps1",
+    "Type": "File",
+    "Length": 2003,
+    "LastWriteTime": "2025-09-30T20:25:44.482385+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\CreateWakeUpTask.ps1",
+    "Type": "File",
+    "Length": 2144,
+    "LastWriteTime": "2025-09-30T18:47:42.2190512+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\DisableInternalCtrl.ahk",
+    "Type": "File",
+    "Length": 954,
+    "LastWriteTime": "2025-09-23T17:43:02.6831705+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\DisableLaptopLeftCtrl_Enhanced.ahk",
+    "Type": "File",
+    "Length": 11716,
+    "LastWriteTime": "2025-09-23T19:42:02.0737082+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\DisableLaptopLeftCtrl.ahk",
+    "Type": "File",
+    "Length": 6564,
+    "LastWriteTime": "2025-09-23T19:42:02.060705+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Emergency_Recovery.bat",
+    "Type": "File",
+    "Length": 571,
+    "LastWriteTime": "2025-09-30T18:32:27.8002661+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\LICENSE",
+    "Type": "File",
+    "Length": 1068,
+    "LastWriteTime": "2025-09-22T15:25:44.9207092+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\LockScreenProtection.ps1",
+    "Type": "File",
+    "Length": 5265,
+    "LastWriteTime": "2025-09-30T18:47:42.2220551+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Monitor.ahk",
+    "Type": "File",
+    "Length": 6522,
+    "LastWriteTime": "2025-09-22T15:25:44.7959409+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\OptimizePowerSettings.ps1",
+    "Type": "File",
+    "Length": 1580,
+    "LastWriteTime": "2025-09-30T18:47:42.2220551+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\README.md",
+    "Type": "File",
+    "Length": 20955,
+    "LastWriteTime": "2025-09-22T15:25:44.9277062+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\SelectiveLeftCtrlBlocker.ahk",
+    "Type": "File",
+    "Length": 16242,
+    "LastWriteTime": "2025-09-30T23:31:13.2015864+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\SubscribeAll Example.ahk",
+    "Type": "File",
+    "Length": 527,
+    "LastWriteTime": "2025-09-22T15:25:44.8044539+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Subscription Example.ahk",
+    "Type": "File",
+    "Length": 299,
+    "LastWriteTime": "2025-09-22T15:25:44.8128915+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\test.ahk",
+    "Type": "File",
+    "Length": 1368,
+    "LastWriteTime": "2025-09-22T15:25:44.8209967+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\TestRecoveryProcedure.ps1",
+    "Type": "File",
+    "Length": 3277,
+    "LastWriteTime": "2025-09-30T18:47:42.2321203+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\TROUBLESHOOTING.md",
+    "Type": "File",
+    "Length": 4182,
+    "LastWriteTime": "2025-09-23T19:42:02.060705+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Development Tools",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.6523182+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.7224991+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\TabletLib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.7560636+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Combined Example.ahk",
+    "Type": "File",
+    "Length": 634,
+    "LastWriteTime": "2025-09-22T15:25:44.5431555+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Context Example.ahk",
+    "Type": "File",
+    "Length": 381,
+    "LastWriteTime": "2025-09-22T15:25:44.558519+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Monitor.ahk",
+    "Type": "File",
+    "Length": 6419,
+    "LastWriteTime": "2025-09-22T15:25:44.5678583+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\SubscribeAbsolute dragging example.ahk",
+    "Type": "File",
+    "Length": 1830,
+    "LastWriteTime": "2025-09-22T15:25:44.5787694+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\SubscribeAbsolute example.ahk",
+    "Type": "File",
+    "Length": 1413,
+    "LastWriteTime": "2025-09-22T15:25:44.5881598+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\SubscribeAll Example.ahk",
+    "Type": "File",
+    "Length": 544,
+    "LastWriteTime": "2025-09-22T15:25:44.59716+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Subscription Example.ahk",
+    "Type": "File",
+    "Length": 307,
+    "LastWriteTime": "2025-09-22T15:25:44.6059589+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\TabletButtonBuilder.ahk",
+    "Type": "File",
+    "Length": 3792,
+    "LastWriteTime": "2025-09-22T15:25:44.6158391+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\TabletButtons.ahk",
+    "Type": "File",
+    "Length": 1445,
+    "LastWriteTime": "2025-09-22T15:25:44.6240556+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Unsubscription Example.ahk",
+    "Type": "File",
+    "Length": 738,
+    "LastWriteTime": "2025-09-22T15:25:44.6317028+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Development Tools\\AhiScanCodeTester.ahk",
+    "Type": "File",
+    "Length": 2922,
+    "LastWriteTime": "2025-09-22T15:25:44.6457963+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Development Tools\\AhkScanCodeTester.ahk",
+    "Type": "File",
+    "Length": 667,
+    "LastWriteTime": "2025-09-22T15:25:44.6543198+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib\\x64",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.7112528+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib\\x86",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.7299349+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib\\AutoHotInterception.ahk",
+    "Type": "File",
+    "Length": 7398,
+    "LastWriteTime": "2025-09-22T15:25:44.6720495+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib\\CLR.ahk",
+    "Type": "File",
+    "Length": 5732,
+    "LastWriteTime": "2025-09-22T15:25:44.6804451+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib\\Unblocker.ps1",
+    "Type": "File",
+    "Length": 47,
+    "LastWriteTime": "2025-09-22T15:25:44.6874451+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib\\x64\\Readme.txt",
+    "Type": "File",
+    "Length": 180,
+    "LastWriteTime": "2025-09-22T15:25:44.7124139+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\Lib\\x86\\Readme.txt",
+    "Type": "File",
+    "Length": 180,
+    "LastWriteTime": "2025-09-22T15:25:44.7309434+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\TabletLib\\JSON.ahk",
+    "Type": "File",
+    "Length": 11255,
+    "LastWriteTime": "2025-09-22T15:25:44.7501041+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\AHK v1\\TabletLib\\TabletLib.ahk",
+    "Type": "File",
+    "Length": 777,
+    "LastWriteTime": "2025-09-22T15:25:44.7570638+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Common\\Lib",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.9113131+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Common\\Lib\\AutoHotInterception.dll",
+    "Type": "File",
+    "Length": 36352,
+    "LastWriteTime": "2025-09-22T15:25:44.913313+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib\\x64",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2025-09-22T15:25:44.8675174+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib\\x86",
+    "Type": "Directory",
+    "Length": null,
+    "LastWriteTime": "2023-03-21T18:54:28+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib\\AutoHotInterception.ahk",
+    "Type": "File",
+    "Length": 7472,
+    "LastWriteTime": "2025-09-22T15:25:44.8362895+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib\\AutoHotInterception.dll",
+    "Type": "File",
+    "Length": 36352,
+    "LastWriteTime": "2025-09-22T15:25:44.7784554+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib\\CLR.ahk",
+    "Type": "File",
+    "Length": 5106,
+    "LastWriteTime": "2025-09-22T15:25:44.8437263+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib\\Unblocker.ps1",
+    "Type": "File",
+    "Length": 47,
+    "LastWriteTime": "2025-09-22T15:25:44.8517246+09:00"
+  },
+  {
+    "FullName": "C:\\devspo\\キーボード修正スクリプト\\Lib\\x64\\interception.dll",
+    "Type": "File",
+    "Length": 11264,
+    "LastWriteTime": "2025-09-22T15:25:44.8697557+09:00"
+  }
+]

@@ -1,0 +1,167 @@
+# ==================================================
+# .gitattributes for Devspo Workspace
+# Generated: 2025-10-17
+# Purpose: Standardize line endings and diff behavior
+# ==================================================
+
+# ==================================================
+# Auto-detect text files and normalize line endings
+# ==================================================
+* text=auto
+
+# ==================================================
+# Windows-specific scripts (CRLF)
+# ==================================================
+*.ahk text eol=crlf
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.reg text eol=crlf
+
+# ==================================================
+# Unix-style scripts (LF)
+# ==================================================
+*.sh text eol=lf
+*.bash text eol=lf
+
+# ==================================================
+# Documentation (Auto)
+# ==================================================
+*.md text
+*.txt text
+*.rst text
+*.adoc text
+
+# ==================================================
+# Configuration files (Auto)
+# ==================================================
+*.json text
+*.xml text
+*.yaml text
+*.yml text
+*.toml text
+*.ini text
+*.cfg text
+*.conf text
+
+# ==================================================
+# Source code (Auto)
+# ==================================================
+*.c text
+*.cpp text
+*.h text
+*.hpp text
+*.js text
+*.ts text
+*.py text
+*.rb text
+*.go text
+*.rs text
+*.java text
+*.cs text
+
+# ==================================================
+# Web files (Auto)
+# ==================================================
+*.html text
+*.css text
+*.scss text
+*.sass text
+*.less text
+
+# ==================================================
+# Binary files (No conversion)
+# ==================================================
+*.dll binary
+*.exe binary
+*.lib binary
+*.a binary
+*.so binary
+*.dylib binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+*.rar binary
+
+# ==================================================
+# Images (Binary)
+# ==================================================
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.svg binary
+*.webp binary
+
+# ==================================================
+# Documents (Binary)
+# ==================================================
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+
+# ==================================================
+# Archives (Binary)
+# ==================================================
+*.zip binary
+*.tar binary
+*.gz binary
+*.bz2 binary
+*.7z binary
+*.rar binary
+
+# ==================================================
+# Diff settings for specific file types
+# ==================================================
+
+# AutoHotkey files: Show function names in diffs
+*.ahk diff=csharp
+
+# PowerShell files: Show function names in diffs
+*.ps1 diff=powershell
+*.psm1 diff=powershell
+
+# Markdown files: Use markdown diff driver
+*.md diff=markdown
+
+# JSON files: Use better JSON diff
+*.json diff=json
+
+# ==================================================
+# Linguist overrides (GitHub language detection)
+# ==================================================
+
+# Mark documentation as documentation
+*.md linguist-documentation
+README.md linguist-documentation
+CHANGELOG.md linguist-documentation
+LICENSE linguist-documentation
+CONTRIBUTING.md linguist-documentation
+
+# Mark generated files
+workspace-scan-raw.json linguist-generated=true
+workspace-tree.txt linguist-generated=true
+
+# ==================================================
+# Merge strategies
+# ==================================================
+
+# Always prefer ours for lock files
+*.lock merge=ours
+
+# Binary files: Use binary merge strategy
+*.dll merge=binary
+*.exe merge=binary
+
+# ==================================================
+# End of .gitattributes
+# ==================================================

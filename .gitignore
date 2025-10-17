@@ -1,0 +1,208 @@
+# ==================================================
+# .gitignore for Devspo Workspace
+# Generated: 2025-10-17
+# ==================================================
+
+# ==================================================
+# Windows System Files
+# ==================================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# ==================================================
+# AutoHotkey
+# ==================================================
+# Compiled executables (keep source only)
+*.exe
+!AutoHotkey*.exe
+
+# AutoHotkey backups
+*.ahk.bak
+*.ahk~
+
+# ==================================================
+# PowerShell
+# ==================================================
+# PowerShell module cache
+*.ps1xml
+*.psc1
+*.psd1.bak
+
+# ==================================================
+# Visual Studio Code
+# ==================================================
+.vscode/
+.vscode-agent/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# ==================================================
+# IDE and Editor Files
+# ==================================================
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ==================================================
+# Archives and Backups
+# ==================================================
+.archive/
+Backup_*/
+*_backup_*
+*.bak
+*.old
+*.orig
+*.tmp
+*.temp
+
+# ==================================================
+# Binary Files
+# ==================================================
+# DLL files (keep in Lib folders, exclude root)
+/*.dll
+# Exclude all DLLs except in specific Lib directories
+*.dll
+!Lib/**/*.dll
+!lib/**/*.dll
+!**/Lib/**/*.dll
+
+# Static libraries
+/*.lib
+/*.a
+
+# Executables
+/*.exe
+
+# ==================================================
+# Logs and Temporary Files
+# ==================================================
+*.log
+*.log.*
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ==================================================
+# OS Generated Files
+# ==================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ==================================================
+# Build and Distribution
+# ==================================================
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==================================================
+# Documentation Build
+# ==================================================
+site/
+docs/_build/
+.doctrees/
+
+# ==================================================
+# Environment and Configuration
+# ==================================================
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# ==================================================
+# Git Specific
+# ==================================================
+*.orig
+*.rej
+
+# ==================================================
+# Node.js (if any future JS projects)
+# ==================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==================================================
+# Python (if any future Python projects)
+# ==================================================
+venv/
+env/
+ENV/
+.venv/
+*.pyc
+
+# ==================================================
+# Project-Specific Exclusions
+# ==================================================
+
+# Workspace scan temporary files
+workspace-scan-raw.json
+workspace-tree.txt
+
+# Keep Agent Infrastructure
+!.agent/
+!.agent/**/*
+
+# Keep README and documentation
+!README.md
+!*/README.md
+!CHANGELOG.md
+!LICENSE
+!CONTRIBUTING.md
+
+# ==================================================
+# Security and Sensitive Data
+# ==================================================
+secrets/
+*.key
+*.pem
+*.cer
+*.crt
+*.p12
+*.pfx
+credentials.json
+config.local.*
+
+# ==================================================
+# Test and Coverage
+# ==================================================
+coverage/
+.coverage
+*.cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# ==================================================
+# End of .gitignore
+# ==================================================

@@ -228,51 +228,87 @@ C:\devspo\
 
 ### Primary Documentation
 
+- [Contributing Guidelines](CONTRIBUTING.md) - Development workflow and code standards
+- [Security Policy](SECURITY.md) - Vulnerability reporting and security best practices
+- [License Information](LICENSE.md) - Multi-source licensing details
+- [Changelog](CHANGELOG.md) - Version history and release notes
+- [GitHub Setup Guide](github-setup.md) - Repository connection instructions
+
+### Agent Infrastructure
+
 - [Project Manifest](.agent/ProjectManifest.md) - Project constitution and standards
 - [System Instructions](.agent/SystemInstructions.md) - Agent operational guidelines
+- [Agent Descriptions](.agent/AgentDescriptions.json) - Capability definitions
 - [Workspace Analysis](.agent/workspace-structure-analysis.md) - Comprehensive workspace report
-
-### Project-Specific Documentation
-
-- [Keyboard Fix Scripts](キーボード修正スクリプト/README.md)
-- [Troubleshooting Guide](キーボード修正スクリプト/TROUBLESHOOTING.md)
-- [Changelog](キーボード修正スクリプト/CHANGELOG.md)
+- [Verification Report](.agent/phase4-verification-report.md) - Infrastructure verification
 
 ### Workflow Documentation
 
-- [Setup Workflow](.agent/workflows/setup.workflow.md)
-- More workflows coming soon...
+- [Setup Workflow](.agent/workflows/setup.workflow.md) - Workspace initialization (Phase 0-6)
+- [Maintenance Workflow](.agent/workflows/maintenance.workflow.md) - Daily/weekly/monthly procedures
+- [Troubleshooting Workflow](.agent/workflows/troubleshooting.workflow.md) - Diagnostic and recovery
+
+### Project-Specific Documentation
+
+- [Keyboard Fix Scripts](キーボード修正スクリプト/README.md) - Main project documentation
+- [Troubleshooting Guide](キーボード修正スクリプト/TROUBLESHOOTING.md) - Issue resolution
+- [Project Changelog](キーボード修正スクリプト/CHANGELOG.md) - Historical changes
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our contribution guidelines:
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on:
 
-### Development Workflow
+- Code of conduct
+- Development setup
+- Coding standards (AutoHotkey, PowerShell, Markdown)
+- Commit message conventions (Conventional Commits)
+- Pull request process
+- Testing requirements
 
-1. **Read the Manifest**: Start with [ProjectManifest.md](.agent/ProjectManifest.md)
-2. **Follow Standards**: Adhere to [SystemInstructions.md](.agent/SystemInstructions.md)
-3. **Create Branch**: `git checkout -b feature/your-feature-name`
-4. **Commit Convention**: Use [Conventional Commits](https://www.conventionalcommits.org/)
+### Quick Start for Contributors
+
+1. **Read Documentation**
+   - [CONTRIBUTING.md](CONTRIBUTING.md) - Development guidelines
+   - [ProjectManifest.md](.agent/ProjectManifest.md) - Project standards
+   - [SystemInstructions.md](.agent/SystemInstructions.md) - Operational guidelines
+
+2. **Setup Development Environment**
+   ```powershell
+   # Clone repository
+   git clone https://github.com/YOUR_USERNAME/devspo.git
+   cd devspo
+   
+   # Review project structure
+   Get-ChildItem -Recurse -Depth 2
    ```
-   feat: Add new feature
-   fix: Fix bug
-   docs: Update documentation
-   style: Format code
-   refactor: Refactor code
-   test: Add tests
-   chore: Update build process
+
+3. **Create Feature Branch**
+   ```powershell
+   git checkout -b feature/your-feature-name
    ```
-5. **Pull Request**: Submit PR with clear description
+
+4. **Follow Commit Convention**
+   ```bash
+   # Format: type(scope): subject
+   git commit -m "feat(keyboard): Add multi-device support"
+   git commit -m "fix(docs): Correct installation instructions"
+   git commit -m "docs: Update troubleshooting guide"
+   ```
+
+5. **Submit Pull Request**
+   - Clear title and description
+   - Reference related issues
+   - Include test results
 
 ### Code Quality Standards
 
 - ✅ Error handling for all external calls
 - ✅ Logging for debugging
-- ✅ Clear variable names
-- ✅ Consistent indentation
-- ✅ Comments where beneficial (Japanese for complex logic)
+- ✅ Clear variable names (English preferred, Japanese for domain-specific)
+- ✅ Consistent indentation (tabs for AutoHotkey, 4 spaces for PowerShell)
+- ✅ Comments where beneficial (complex logic requires explanation)
 
 ---
 
@@ -301,12 +337,28 @@ We welcome contributions! Please see our contribution guidelines:
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project contains code from multiple sources with different licenses:
 
-### Third-Party Licenses
+- **Main Project Code**: MIT License - see [LICENSE.md](LICENSE.md)
+- **AutoHotInterception Library**: MIT License (© 2018 Clive Galway)
+- **Interception Driver**: LGPL 3.0 (non-commercial usage, commercial license available)
+- **Documentation**: CC BY 4.0 (Creative Commons Attribution)
 
-- **Interception Library**: LGPL 3.0 (non-commercial usage)
-- **AutoHotkey**: GNU GPL v2
+For detailed license information, see [LICENSE.md](LICENSE.md).
+
+---
+
+## 🔒 Security
+
+Security is a top priority. Please read our [Security Policy](SECURITY.md) for:
+
+- Supported versions
+- Vulnerability reporting process
+- Security best practices
+- Safe execution guidelines
+- Known security considerations
+
+**Found a security issue?** Report it privately via [GitHub Security Advisories](https://github.com/YOUR_USERNAME/devspo/security/advisories).
 
 ---
 
@@ -322,14 +374,23 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### Getting Help
 
-1. **Check Documentation**: Start with [TROUBLESHOOTING.md](キーボード修正スクリプト/TROUBLESHOOTING.md)
-2. **Search Issues**: Look for existing GitHub issues
-3. **Create Issue**: Submit detailed issue report with:
-   - OS version
-   - AutoHotkey version
-   - Steps to reproduce
-   - Error messages
-   - Debug logs
+1. **Check Documentation**
+   - [Troubleshooting Workflow](.agent/workflows/troubleshooting.workflow.md) - Comprehensive diagnostics
+   - [Project Troubleshooting](キーボード修正スクリプト/TROUBLESHOOTING.md) - Issue-specific guides
+   - [FAQ and Known Issues](#known-issues) - Common problems and solutions
+
+2. **Search Existing Issues**
+   - Visit [GitHub Issues](https://github.com/YOUR_USERNAME/devspo/issues)
+   - Use search to find similar problems
+
+3. **Create New Issue**
+   - Provide detailed information:
+     * OS version (Windows 10/11, build number)
+     * AutoHotkey version
+     * Steps to reproduce
+     * Expected vs actual behavior
+     * Error messages and logs
+   - Use issue templates when available
 
 ### Emergency Recovery
 
@@ -348,18 +409,28 @@ If the keyboard fix script causes issues:
 
 ## 🗺 Roadmap
 
-### Short-term (Phase 3-4)
-- [ ] Fix Right Ctrl + Shift combination issue
-- [ ] Resolve startup Left Ctrl continuous signal
-- [ ] Implement intelligent archive structure
-- [ ] Consolidate duplicate dependencies
+### Phase 3-4: Foundation Complete ✅
+- [x] Professional workspace setup
+- [x] Git repository initialization
+- [x] Agent infrastructure (.agent/ directory)
+- [x] Comprehensive documentation
+- [x] Archive structure for historical files
 
-### Long-term (Phase 5-6)
-- [ ] Enhanced documentation with diagrams
-- [ ] Comprehensive unit test coverage
+### Phase 5-6: Production Hardening 🚀
+- [ ] Fix Right Ctrl + Shift combination issue (#1)
+- [ ] Resolve startup Left Ctrl continuous signal (#2)
+- [ ] Implement automated testing framework
+- [ ] Add GitHub Actions CI/CD pipeline
 - [ ] Performance profiling and optimization
-- [ ] Multi-language support (English, Japanese)
-- [ ] GitHub Actions CI/CD pipeline
+
+### Future Enhancements 💡
+- [ ] Multi-language support (English, Japanese, German)
+- [ ] Graphical configuration tool
+- [ ] Real-time statistics dashboard
+- [ ] Cross-platform support exploration (Linux, macOS)
+- [ ] Plugin architecture for extensibility
+
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 ---
 
@@ -372,5 +443,9 @@ If the keyboard fix script causes issues:
 
 ---
 
-**Made with ❤️ by VS_CodingAgent**  
-**Last Updated**: 2025-10-17 20:03 JST
+**Made with ❤️ by devspo Project Contributors**  
+**Version**: 1.0.0  
+**Last Updated**: 2025-10-17  
+**Status**: Production Ready 🚀
+
+For questions, issues, or contributions, visit our [GitHub repository](https://github.com/YOUR_USERNAME/devspo).

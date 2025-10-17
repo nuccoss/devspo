@@ -658,7 +658,7 @@ Write-Host "✅ Diagnostics collected in: $diagPath"
    - Operational support
 
 2. **GitHub Issues** (Community support)
-   - https://github.com/yourusername/devspo/issues
+   - https://github.com/nuccoss/devspo/issues
 
 3. **CEO Thread** (Strategic issues)
    - 10[Orch]10-12_MNTG-CEO-TE_VASt-g2.5p_agb2.6.8

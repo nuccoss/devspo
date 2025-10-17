@@ -2,8 +2,8 @@
 
 **Professional development workspace for emergency system automation and keyboard control solutions**
 
-[![Status](https://img.shields.io/badge/status-production-success)](https://github.com/yourusername/devspo)
-[![Reliability](https://img.shields.io/badge/reliability-99.2%25-brightgreen)](https://github.com/yourusername/devspo)
+[![Status](https://img.shields.io/badge/status-production-success)](https://github.com/nuccoss/devspo)
+[![Reliability](https://img.shields.io/badge/reliability-99.2%25-brightgreen)](https://github.com/nuccoss/devspo)
 [![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2.0-blue)](https://www.autohotkey.com/)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue)](https://docs.microsoft.com/powershell/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
@@ -123,7 +123,7 @@ Historical snapshot taken before production deployment. Preserved for reference 
 
 1. **Clone the repository**:
    ```powershell
-   git clone https://github.com/yourusername/devspo.git
+   git clone https://github.com/nuccoss/devspo.git
    cd devspo
    ```
 
@@ -277,7 +277,7 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 2. **Setup Development Environment**
    ```powershell
    # Clone repository
-   git clone https://github.com/YOUR_USERNAME/devspo.git
+   git clone https://github.com/nuccoss/devspo.git
    cd devspo
    
    # Review project structure
@@ -358,7 +358,7 @@ Security is a top priority. Please read our [Security Policy](SECURITY.md) for:
 - Safe execution guidelines
 - Known security considerations
 
-**Found a security issue?** Report it privately via [GitHub Security Advisories](https://github.com/YOUR_USERNAME/devspo/security/advisories).
+**Found a security issue?** Report it privately via [GitHub Security Advisories](https://github.com/nuccoss/devspo/security/advisories).
 
 ---
 
@@ -380,7 +380,7 @@ Security is a top priority. Please read our [Security Policy](SECURITY.md) for:
    - [FAQ and Known Issues](#known-issues) - Common problems and solutions
 
 2. **Search Existing Issues**
-   - Visit [GitHub Issues](https://github.com/YOUR_USERNAME/devspo/issues)
+   - Visit [GitHub Issues](https://github.com/nuccoss/devspo/issues)
    - Use search to find similar problems
 
 3. **Create New Issue**
@@ -448,4 +448,4 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 **Last Updated**: 2025-10-17  
 **Status**: Production Ready 🚀
 
-For questions, issues, or contributions, visit our [GitHub repository](https://github.com/YOUR_USERNAME/devspo).
+For questions, issues, or contributions, visit our [GitHub repository](https://github.com/nuccoss/devspo).

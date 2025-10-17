@@ -22,7 +22,7 @@ We take security issues seriously. If you discover a security vulnerability, ple
 ### 2. Report Privately
 
 **Preferred Method**: GitHub Security Advisories
-1. Visit https://github.com/YOUR_USERNAME/devspo/security/advisories
+1. Visit https://github.com/nuccoss/devspo/security/advisories
 2. Click "Report a vulnerability"
 3. Provide detailed information (see template below)
 
@@ -196,8 +196,8 @@ Get-Process -Name "AutoHotkey*"
 
 ### Notification Channels
 
-- **GitHub Security Advisories**: https://github.com/YOUR_USERNAME/devspo/security/advisories
-- **GitHub Releases**: https://github.com/YOUR_USERNAME/devspo/releases
+- **GitHub Security Advisories**: https://github.com/nuccoss/devspo/security/advisories
+- **GitHub Releases**: https://github.com/nuccoss/devspo/releases
 - **CHANGELOG.md**: Check for `[SECURITY]` tags
 
 ### Update Process

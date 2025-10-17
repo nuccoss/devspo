@@ -154,10 +154,10 @@ N/A - Initial release
 
 ## Links
 
-- [Repository](https://github.com/YOUR_USERNAME/devspo)
-- [Issues](https://github.com/YOUR_USERNAME/devspo/issues)
-- [Pull Requests](https://github.com/YOUR_USERNAME/devspo/pulls)
-- [Releases](https://github.com/YOUR_USERNAME/devspo/releases)
+- [Repository](https://github.com/nuccoss/devspo)
+- [Issues](https://github.com/nuccoss/devspo/issues)
+- [Pull Requests](https://github.com/nuccoss/devspo/pulls)
+- [Releases](https://github.com/nuccoss/devspo/releases)
 
 ---
 
@@ -188,5 +188,5 @@ Given a version number `MAJOR.MINOR.PATCH`, increment:
 
 ---
 
-[Unreleased]: https://github.com/YOUR_USERNAME/devspo/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/YOUR_USERNAME/devspo/releases/tag/v1.0.0
+[Unreleased]: https://github.com/nuccoss/devspo/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/nuccoss/devspo/releases/tag/v1.0.0

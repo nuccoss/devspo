@@ -101,7 +101,7 @@ Enhancement suggestions are tracked as GitHub issues.
 
 ```powershell
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/devspo.git
+git clone https://github.com/nuccoss/devspo.git
 cd devspo
 
 # Review project structure
@@ -442,8 +442,8 @@ git push -u origin fix/issue-123-bug-description
 
 - 📖 Read the [README.md](README.md)
 - 📚 Check [ProjectManifest.md](.agent/ProjectManifest.md)
-- 🐛 Search [existing issues](https://github.com/YOUR_USERNAME/devspo/issues)
-- 💬 Create a [new issue](https://github.com/YOUR_USERNAME/devspo/issues/new)
+- 🐛 Search [existing issues](https://github.com/nuccoss/devspo/issues)
+- 💬 Create a [new issue](https://github.com/nuccoss/devspo/issues/new)
 
 ---
 

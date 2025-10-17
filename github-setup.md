@@ -67,8 +67,8 @@ gh repo create devspo --private --source=. --remote=origin --push
 git remote -v
 
 # Should show:
-# origin  https://github.com/yourusername/devspo.git (fetch)
-# origin  https://github.com/yourusername/devspo.git (push)
+# origin  https://github.com/nuccoss/devspo.git (fetch)
+# origin  https://github.com/nuccoss/devspo.git (push)
 
 # Check branch tracking
 git branch -vv
@@ -97,8 +97,8 @@ git branch -vv
 ```powershell
 cd C:\devspo
 
-# Add remote (replace YOUR_USERNAME)
-git remote add origin https://github.com/YOUR_USERNAME/devspo.git
+# Add remote (replace nuccoss)
+git remote add origin https://github.com/nuccoss/devspo.git
 
 # Verify remote
 git remote -v
@@ -115,14 +115,14 @@ Delta compression using up to 8 threads
 Compressing objects: 100% (71/71), done.
 Writing objects: 100% (78/78), 1.23 MiB | 2.50 MiB/s, done.
 Total 78 (delta 5), reused 0 (delta 0), pack-reused 0
-To https://github.com/YOUR_USERNAME/devspo.git
+To https://github.com/nuccoss/devspo.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
 ### 2.3 Verify on GitHub
 
-Visit: `https://github.com/YOUR_USERNAME/devspo`
+Visit: `https://github.com/nuccoss/devspo`
 
 You should see:
 - ✅ README.md rendered with badges
@@ -169,7 +169,7 @@ ssh -T git@github.com
 
 Expected output:
 ```
-Hi YOUR_USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
+Hi nuccoss! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 ### 3.4 Create Repository and Push
@@ -179,7 +179,7 @@ cd C:\devspo
 
 # Create repository via GitHub CLI or web interface first
 # Then add SSH remote
-git remote add origin git@github.com:YOUR_USERNAME/devspo.git
+git remote add origin git@github.com:nuccoss/devspo.git
 
 # Push
 git push -u origin master
@@ -191,7 +191,7 @@ git push -u origin master
 
 ### 1. Branch Protection (Post-Setup)
 
-1. Visit: `https://github.com/YOUR_USERNAME/devspo/settings/branches`
+1. Visit: `https://github.com/nuccoss/devspo/settings/branches`
 2. Add rule for `master` branch:
    - ✅ Require pull request reviews before merging
    - ✅ Require status checks to pass before merging
@@ -340,7 +340,7 @@ fatal: remote origin already exists.
 git remote remove origin
 
 # Add correct remote
-git remote add origin https://github.com/YOUR_USERNAME/devspo.git
+git remote add origin https://github.com/nuccoss/devspo.git
 ```
 
 ---
@@ -377,11 +377,11 @@ git push --force-with-lease origin master
 
 ## Repository URL Examples
 
-Replace `YOUR_USERNAME` with your actual GitHub username:
+Replace `nuccoss` with your actual GitHub username:
 
-- **HTTPS**: `https://github.com/YOUR_USERNAME/devspo.git`
-- **SSH**: `git@github.com:YOUR_USERNAME/devspo.git`
-- **Web**: `https://github.com/YOUR_USERNAME/devspo`
+- **HTTPS**: `https://github.com/nuccoss/devspo.git`
+- **SSH**: `git@github.com:nuccoss/devspo.git`
+- **Web**: `https://github.com/nuccoss/devspo`
 
 ---
 

@@ -10,6 +10,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Removed
 ### Fixed
 
+## [1.0.0] - 2025-10-19
+### ✨ Added
+- 運用手順_20251019.md: 完全な運用マニュアル (LLM/Agent/人間向け、768行)
+- WORKSPACE_STRUCTURE.md: LLM/Agent向けプロジェクト構造理解ドキュメント (450行)
+- Diagnostic Logs/: 診断ログ専用フォルダ
+- PowerShell Scripts/: PowerShellスクリプト専用フォルダ
+- 手動リセット方式確定: 本体右Ctrl → K270左Ctrl × 2回
+
+### 🔄 Changed
+- README.md: v1.0情報反映 (バッジ追加、Overview更新)
+- フォルダ構造整理: ファイル分類明確化 (診断ログ、PowerShellスクリプト)
+
+### 🐛 Fixed
+- #MaxHotkeysPerInterval構文エラー (削除で解消)
+- 警告ダイアログ対策不要確認 (デフォルト動作で正常範囲内)
+
+### ✅ Validated
+- Phase 1-2テスト完了 (正常動作確認)
+- ハードウェアショート検出原理解明: スクリプト動作中は*LCtrl::で完全ブロック
+- K270 Bluetooth完全保護確認 (7回通過、正常動作)
+
 ## [0.9.1] - 2023-07-31
 ### Fixed
 - Compiled script (FileInstall) fix for AHK v2

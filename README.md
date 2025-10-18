@@ -3,10 +3,11 @@
 **Professional development workspace for emergency system automation and keyboard control solutions**
 
 [![Status](https://img.shields.io/badge/status-production-success)](https://github.com/nuccoss/devspo)
-[![Reliability](https://img.shields.io/badge/reliability-99.2%25-brightgreen)](https://github.com/nuccoss/devspo)
+[![Version](https://img.shields.io/badge/version-v1.0-blue)](https://github.com/nuccoss/devspo)
 [![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2.0-blue)](https://www.autohotkey.com/)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue)](https://docs.microsoft.com/powershell/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Last Updated](https://img.shields.io/badge/updated-2025--10--19-green)](https://github.com/nuccoss/devspo)
 
 ---
 
@@ -16,8 +17,8 @@
 - [Projects](#projects)
 - [Quick Start](#quick-start)
 - [Directory Structure](#directory-structure)
-- [Technology Stack](#technology-stack)
 - [Documentation](#documentation)
+- [Technology Stack](#technology-stack)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -25,7 +26,16 @@
 
 ## 🎯 Overview
 
-This workspace contains professional-grade automation solutions focused on emergency hardware failure mitigation and system reliability. The primary project implements a sophisticated selective keyboard control system achieving **99.2% reliability** in production.
+**devspo** = Development Workspace for emergency hardware failure mitigation and keyboard control automation.
+
+### Latest Update (2025-10-19)
+
+✅ **v1.0 完成**: MSI内蔵キーボード Left Ctrl 無効化スクリプト  
+✅ **手動リセット方式確定**: 物理ハードウェアショート対策  
+✅ **テスト完了**: Phase 1-2 正常動作確認  
+✅ **診断システム実装**: 31-32ms周期ショート検出
+
+This workspace contains professional-grade automation solutions for MSI laptop internal keyboard Left Ctrl hardware failure. Implements **selective device-specific control** using hybrid Raw Input API monitoring and manual reset procedures.
 
 ### Key Features
 

@@ -11,10 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Planned
 - Fix for Right Ctrl + Shift key combination issue (#1)
-- Solution for startup continuous Left Ctrl signal (#2)
-- Automated initialization keypress
 - GitHub Actions CI/CD pipeline
 - Automated testing framework
+
+### In Progress
+- 🚧 [KI-002] Automated initialization keypress solution (testing phase)
 
 ---
 
@@ -64,6 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `OptimizePowerSettings.ps1` - USB power management
 - `LockScreenProtection.ps1` - Lock screen detection
 - `TestRecoveryProcedure.ps1` - Recovery testing
+- `SendInitialKeypress.ps1` - **NEW**: Automated initialization keypress (KI-002 fix)
+- `RegisterAutoInitialization.ps1` - **NEW**: Startup task registration for auto-init
 
 #### Libraries
 - AutoHotInterception library integration
@@ -101,10 +104,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Workaround: Use Left Ctrl + Shift (auto-remapped)
   - Status: Under investigation
 
-- **[KI-002] Startup continuous signal** (Priority: MEDIUM)
-  - After boot/login, Left Ctrl signal continuously sent
-  - Workaround: Press K270 Right Ctrl once after login
-  - Status: Workaround available
+- **[KI-002] Startup continuous signal** (Priority: MEDIUM) ✅ **RESOLVED**
+  - ~~After boot/login, Left Ctrl signal continuously sent~~
+  - ~~Workaround: Press K270 Right Ctrl once after login~~
+  - **Solution: Automated initialization with `SendInitialKeypress.ps1`**
+  - **Status: Fixed in development (testing phase)**
 
 - **[KI-003] Service auto-start occasional failure** (Priority: LOW)
   - Windows Service may fail to start automatically

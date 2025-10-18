@@ -34,13 +34,37 @@ global BLUETOOTH_KEYBOARD_PATTERNS := [
     "BTHENUM"         ; Bluetooth列挙
 ]
 
-; 統計情報
+; 統計情報（拡張版: ハードウェアショート診断用）
 global stats := {
     internalBlocked: 0,
     bluetoothAllowed: 0,
     shiftCtrlRemapped: 0,
     lastDeviceDetected: "",
-    deviceLog: []
+    deviceLog: [],
+    
+    ; === 診断情報（新規追加） ===
+    ; 全信号履歴（最新100件）
+    signalHistory: [],
+    
+    ; 受信間隔統計
+    intervalStats: {
+        min: 999999,      ; 最小間隔(ms)
+        max: 0,           ; 最大間隔(ms)
+        avg: 0,           ; 平均間隔(ms)
+        total: 0,         ; 総サンプル数
+        sum: 0            ; 合計時間(ms)
+    },
+    
+    ; ショート疑惑検出
+    suspiciousPatterns: {
+        rapidFire: 0,       ; 高速連続信号（<50ms間隔）
+        ghostSignal: 0,     ; ゴースト信号（連続10回以上）
+        lastRapidTime: 0    ; 最後の高速連続検出時刻
+    },
+    
+    ; タイムスタンプ
+    startTime: A_TickCount,
+    lastSignalTime: 0
 }
 
 ; ===============================================
@@ -71,6 +95,83 @@ RegisterRawInputDevices()
 OnMessage(WM_INPUT, ProcessRawInput)
 
 ; ===============================================
+; KI-002対策: 起動直後の初期化処理（手動リセット方式）
+; ===============================================
+; 目的: ハードウェアショートによるCtrl押しっぱなしゴースト信号の認識
+; 制約: Send()コマンドは物理的なハードウェアショートをリセットできない
+; 対策: ユーザーに手動リセット手順を案内
+; タイミング: 起動直後に案内表示
+
+; 起動時の手動リセット案内
+SetTimer(ShowStartupResetGuide, -2000)  ; 2秒後に案内表示
+
+ShowStartupResetGuide() {
+    global DEBUG_MODE
+    
+    if (DEBUG_MODE) {
+        OutputDebug("📢 起動時リセット案内表示")
+    }
+    
+    ; 起動時のリセット案内
+    result := MsgBox(
+        "🚀 スクリプト起動完了`n`n"
+        "本体左Ctrlのショートが発生している場合、`n"
+        "以下の手順でリセットしてください:`n`n"
+        "【リセット手順 - 2回実行推奨】`n"
+        "1️⃣ 本体キーボードの右Ctrlキーを1回押す`n"
+        "2️⃣ K270の左Ctrlキーを1回押す`n"
+        "3️⃣ もう一度: 本体右Ctrl → K270左Ctrl`n`n"
+        "💡 ショートが発生していない場合は、`n"
+        "   この操作は不要です。`n`n"
+        "今すぐ詳細なリセット手順を確認しますか?",
+        "起動時リセット案内",
+        0x4 + 0x40 + 0x1000  ; はい/いいえ + 情報アイコン + 最前面
+    )
+    
+    if (result = "Yes") {
+        ManualReset()  ; 詳細な手動リセット案内を表示
+    }
+}
+
+; 手動リセット機能（トレイメニューから実行）
+ManualReset(*) {
+    global DEBUG_MODE, stats
+    
+    if (DEBUG_MODE) {
+        OutputDebug("🔄 手動リセット: ユーザーが実行")
+    }
+    
+    ; 統計情報に手動リセット回数を記録
+    if (!stats.HasOwnProp("manualResets")) {
+        stats.manualResets := 0
+    }
+    stats.manualResets++
+    
+    ; ユーザーに手動操作を案内（2回推奨）
+    MsgBox(
+        "⚠️ ハードウェアショートのリセット手順`n`n"
+        "物理的なキーボードショートは、ソフトウェアでは`n"
+        "リセットできません。以下の手順で手動リセットしてください:`n`n"
+        "【リセット手順 - 2回実行推奨】`n"
+        "1️⃣ 本体キーボードの右Ctrlキーを1回押す`n"
+        "2️⃣ K270の左Ctrlキーを1回押す`n"
+        "3️⃣ もう一度: 本体右Ctrl → K270左Ctrl`n`n"
+        "⚠️ 重要: 1回で解消されない場合があるため、`n"
+        "         2回繰り返すことを推奨します。`n`n"
+        "💡 ヒント:`n"
+        "• 本体左Ctrlは触らないでください（ショート原因）`n"
+        "• 本体右Ctrl→K270左Ctrlの順番を守ってください`n"
+        "• 各操作の間に1秒程度の間隔を開けてください",
+        "手動リセット案内（2回推奨）",
+        0x40 + 0x1000
+    )
+    
+    if (DEBUG_MODE) {
+        OutputDebug("✅ 手動リセット案内表示完了（累計: " stats.manualResets "回）")
+    }
+}
+
+; ===============================================
 ; 緊急修正: 比率ベース + デバイス検出ベース判定
 ; ===============================================
 
@@ -79,13 +180,55 @@ global emergencyMode := true  ; 緊急モード有効
 global ctrlPressHistory := []  ; Ctrl押下履歴
 global lastDeviceCheckTime := 0  ; 最終デバイスチェック時刻
 
-; 全デバイスのLeft Ctrl監視（修正版）
+; 全デバイスのLeft Ctrl監視（診断機能強化版）
 *LCtrl::
 {
     global stats, DEBUG_MODE, emergencyMode, ctrlPressHistory, lastDeviceCheckTime
     
-    ; 緊急モードでは全てのLeft Ctrlを監視
+    ; === 診断データ収集（新規追加） ===
     currentTime := A_TickCount
+    
+    ; 受信間隔を計算
+    if (stats.lastSignalTime > 0) {
+        interval := currentTime - stats.lastSignalTime
+        
+        ; 統計情報更新
+        if (interval < stats.intervalStats.min) {
+            stats.intervalStats.min := interval
+        }
+        if (interval > stats.intervalStats.max) {
+            stats.intervalStats.max := interval
+        }
+        stats.intervalStats.total++
+        stats.intervalStats.sum += interval
+        stats.intervalStats.avg := Round(stats.intervalStats.sum / stats.intervalStats.total, 2)
+        
+        ; ショート疑惑検出
+        if (interval < 50) {  ; 50ms未満の高速連続
+            stats.suspiciousPatterns.rapidFire++
+            stats.suspiciousPatterns.lastRapidTime := currentTime
+            
+            if (DEBUG_MODE) {
+                OutputDebug("⚠️ 高速連続信号検出: " interval "ms")
+            }
+        }
+    }
+    
+    ; 信号履歴記録（最新100件）
+    stats.signalHistory.Push({
+        time: currentTime,
+        interval: (stats.lastSignalTime > 0) ? (currentTime - stats.lastSignalTime) : 0,
+        device: stats.lastDeviceDetected
+    })
+    
+    if (stats.signalHistory.Length > 100) {
+        stats.signalHistory.RemoveAt(1)
+    }
+    
+    stats.lastSignalTime := currentTime
+    ; === 診断データ収集終了 ===
+    
+    ; 緊急モードでは全てのLeft Ctrlを監視
     ctrlPressHistory.Push({time: currentTime, device: "Unknown"})
     
     ; 履歴が10個を超えたら古いものを削除
@@ -191,7 +334,9 @@ Menu_Tray := A_TrayMenu
 Menu_Tray.Delete()
 
 Menu_Tray.Add("📊 統計情報", ShowStatistics)
-Menu_Tray.Add("🔍 検出されたデバイス", ShowDeviceLog)
+Menu_Tray.Add("� 手動リセット", ManualReset)
+Menu_Tray.Add("�🔍 検出されたデバイス", ShowDeviceLog)
+Menu_Tray.Add("💾 診断ログ出力", ExportDiagnosticLog)
 Menu_Tray.Add("🐛 デバッグログ切替", ToggleDebugMode)
 Menu_Tray.Add()
 Menu_Tray.Add("ℹ️ スクリプト情報", ShowInfo)
@@ -204,19 +349,59 @@ Menu_Tray.Add("❌ 終了", ExitScript)
 ShowStatistics(*)
 {
     totalDevices := stats.deviceLog.Length
+    uptime := Round((A_TickCount - stats.startTime) / 1000, 1)  ; 秒単位
+    periodicResets := stats.HasOwnProp("periodicResets") ? stats.periodicResets : 0
+    
+    ; ショート疑惑判定
+    suspicionLevel := ""
+    if (stats.suspiciousPatterns.rapidFire > 50) {
+        suspicionLevel := "🔴 高（ハードウェアショートの可能性大）"
+    } else if (stats.suspiciousPatterns.rapidFire > 20) {
+        suspicionLevel := "🟡 中（異常な連続信号あり）"
+    } else if (stats.suspiciousPatterns.rapidFire > 5) {
+        suspicionLevel := "🟢 低（正常範囲内）"
+    } else {
+        suspicionLevel := "⚪ なし"
+    }
+    
+    ; 最近の信号パターン（最新5件）
+    recentSignals := ""
+    startIdx := Max(1, stats.signalHistory.Length - 4)
+    Loop (Min(5, stats.signalHistory.Length)) {
+        idx := startIdx + A_Index - 1
+        if (idx <= stats.signalHistory.Length) {
+            signal := stats.signalHistory[idx]
+            recentSignals .= Format("  {}: {}ms`n", idx, signal.interval)
+        }
+    }
+    
+    ; 手動リセット回数
+    manualResets := stats.HasOwnProp("manualResets") ? stats.manualResets : 0
     
     MsgBox(
-        "📊 キーボード制御統計`n`n"
+        "📊 キーボード制御統計（診断モード）`n`n"
+        "=== 基本統計 ===`n"
         "🚫 内蔵キーボード Left Ctrl ブロック: " stats.internalBlocked "`n"
-        "🔄 Shift+Left Ctrl -> Shift+Right Ctrl リマップ: " stats.shiftCtrlRemapped "`n"
+        "🔄 Shift+Left Ctrl リマップ: " stats.shiftCtrlRemapped "`n"
         "✅ Bluetoothキーボード Left Ctrl 通過: " stats.bluetoothAllowed "`n"
         "🔍 検出デバイス総数: " totalDevices "`n"
-        "📱 最後に検出されたデバイス: " (stats.lastDeviceDetected ? stats.lastDeviceDetected : "なし") "`n`n"
-        "💡 動作概要:`n"
-        "• MSI内蔵キーボードLeft Ctrl: 完全ブロック`n"
-        "• MSI内蔵キーボードShift+Left Ctrl: Right Ctrlにリマップ`n"
-        "• Bluetoothキーボード: すべて正常動作",
-        "統計情報",
+        "⏱️ 起動時間: " uptime "秒`n"
+        "🔄 定期リセット実行回数: " periodicResets "回（30分ごと）`n"
+        "👆 手動リセット実行回数: " manualResets "回`n`n"
+        "=== 受信間隔診断 ===`n"
+        "📊 総信号数: " stats.intervalStats.total "`n"
+        "⚡ 最小間隔: " (stats.intervalStats.min < 999999 ? stats.intervalStats.min : "-") "ms`n"
+        "⏰ 最大間隔: " stats.intervalStats.max "ms`n"
+        "📈 平均間隔: " stats.intervalStats.avg "ms`n`n"
+        "=== ショート疑惑検出 ===`n"
+        "🔥 高速連続信号(<50ms): " stats.suspiciousPatterns.rapidFire "回`n"
+        "⚠️ 疑惑レベル: " suspicionLevel "`n`n"
+        "=== 最新5件の信号間隔 ===`n"
+        recentSignals "`n"
+        "💡 診断: 高速連続信号が多い場合、ハードウェアショートの可能性`n"
+        "💡 リセット方式: 手動リセット（本体右Ctrl → K270左Ctrl）`n"
+        "💡 手動リセット: トレイメニュー → 🔄 手動リセット",
+        "統計情報（診断モード）",
         0x40 + 0x1000
     )
 }
@@ -238,6 +423,71 @@ ShowDeviceLog(*)
     logText .= "• 'HID' + 'VID_' = Bluetoothキーボード（Left Ctrl有効）"
     
     MsgBox(logText, "検出デバイスログ", 0x40)
+}
+
+ExportDiagnosticLog(*)
+{
+    global stats
+    
+    ; ログファイル名（タイムスタンプ付き）
+    timestamp := FormatTime(, "yyyyMMdd_HHmmss")
+    logFile := A_ScriptDir "\DiagnosticLog_" timestamp ".txt"
+    
+    ; ログ内容生成
+    uptime := Round((A_TickCount - stats.startTime) / 1000, 1)
+    
+    logContent := "========================================`n"
+    logContent .= "ハードウェアショート診断ログ`n"
+    logContent .= "========================================`n"
+    logContent .= "日時: " FormatTime(, "yyyy/MM/dd HH:mm:ss") "`n"
+    logContent .= "起動時間: " uptime "秒`n`n"
+    
+    logContent .= "=== 基本統計 ===`n"
+    logContent .= "内蔵キーボードブロック: " stats.internalBlocked "`n"
+    logContent .= "Bluetoothキーボード通過: " stats.bluetoothAllowed "`n"
+    logContent .= "Shift+Ctrlリマップ: " stats.shiftCtrlRemapped "`n`n"
+    
+    logContent .= "=== 受信間隔統計 ===`n"
+    logContent .= "総信号数: " stats.intervalStats.total "`n"
+    logContent .= "最小間隔: " (stats.intervalStats.min < 999999 ? stats.intervalStats.min : "-") "ms`n"
+    logContent .= "最大間隔: " stats.intervalStats.max "ms`n"
+    logContent .= "平均間隔: " stats.intervalStats.avg "ms`n`n"
+    
+    logContent .= "=== ショート疑惑検出 ===`n"
+    logContent .= "高速連続信号(<50ms): " stats.suspiciousPatterns.rapidFire "回`n"
+    
+    if (stats.suspiciousPatterns.rapidFire > 50) {
+        logContent .= "診断: ハードウェアショートの可能性が高い`n"
+    } else if (stats.suspiciousPatterns.rapidFire > 20) {
+        logContent .= "診断: 異常な連続信号あり`n"
+    } else {
+        logContent .= "診断: 正常範囲内`n"
+    }
+    
+    logContent .= "`n=== 信号履歴（最新50件） ===`n"
+    logContent .= "No, 時刻(ms), 間隔(ms), デバイス`n"
+    
+    startIdx := Max(1, stats.signalHistory.Length - 49)
+    Loop (Min(50, stats.signalHistory.Length)) {
+        idx := startIdx + A_Index - 1
+        if (idx <= stats.signalHistory.Length) {
+            signal := stats.signalHistory[idx]
+            logContent .= Format("{}, {}, {}, {}`n", idx, signal.time, signal.interval, signal.device)
+        }
+    }
+    
+    logContent .= "`n=== 検出デバイス ===`n"
+    for device in stats.deviceLog {
+        logContent .= device "`n"
+    }
+    
+    ; ファイル出力
+    try {
+        FileAppend(logContent, logFile)
+        MsgBox("診断ログを出力しました:`n" logFile, "診断ログ出力", 0x40)
+    } catch as err {
+        MsgBox("ログ出力エラー: " err.Message, "エラー", 0x10)
+    }
 }
 
 ToggleDebugMode(*)
@@ -504,9 +754,11 @@ MsgBox(
     "✅ 機能:`n"
     "• MSI内蔵キーボードの Left Ctrl のみ無効化`n"
     "• Bluetoothキーボードの Left Ctrl は正常動作`n"
-    "• USBキーボードの Left Ctrl も正常動作`n`n"
+    "• USBキーボードの Left Ctrl も正常動作`n"
+    "• ショート発生時は手動リセット（本体右Ctrl→K270左Ctrl）`n`n"
     "📊 統計確認: システムトレイアイコン右クリック`n"
-    "🔍 検出デバイス: トレイメニューから確認可能",
+    "🔍 検出デバイス: トレイメニューから確認可能`n"
+    "🔄 手動リセット: トレイメニュー → 手動リセット",
     "内蔵キーボード制御開始",
     0x40 + 0x4000
 )

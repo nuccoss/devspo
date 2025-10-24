@@ -172,20 +172,19 @@ ManualReset(*) {
 }
 
 ; ===============================================
-; 緊急修正: 比率ベース + デバイス検出ベース判定
+; 厳格なデバイス判定: デバイス名のみで判定（統計比率判定削除）
 ; ===============================================
 
 ; グローバル状態管理
-global emergencyMode := true  ; 緊急モード有効
-global ctrlPressHistory := []  ; Ctrl押下履歴
-global lastDeviceCheckTime := 0  ; 最終デバイスチェック時刻
+global ctrlPressStartTime := 0  ; Ctrl押下開始時刻
+global ctrlLongPressThreshold := 500  ; 長押し判定閾値(ms)
 
-; 全デバイスのLeft Ctrl監視（診断機能強化版）
+; 全デバイスのLeft Ctrl監視（厳格版）
 *LCtrl::
 {
-    global stats, DEBUG_MODE, emergencyMode, ctrlPressHistory, lastDeviceCheckTime
+    global stats, DEBUG_MODE, ctrlPressStartTime, ctrlLongPressThreshold
     
-    ; === 診断データ収集（新規追加） ===
+    ; === 診断データ収集 ===
     currentTime := A_TickCount
     
     ; 受信間隔を計算
@@ -228,35 +227,19 @@ global lastDeviceCheckTime := 0  ; 最終デバイスチェック時刻
     stats.lastSignalTime := currentTime
     ; === 診断データ収集終了 ===
     
-    ; 緊急モードでは全てのLeft Ctrlを監視
-    ctrlPressHistory.Push({time: currentTime, device: "Unknown"})
+    ; Ctrl押下開始時刻を記録
+    ctrlPressStartTime := currentTime
     
-    ; 履歴が10個を超えたら古いものを削除
-    if (ctrlPressHistory.Length > 10) {
-        ctrlPressHistory.RemoveAt(1)
-    }
-    
-    ; 革新的判定: デバイス名パターン + 使用頻度比率
-    totalBluetooth := stats.bluetoothAllowed
-    totalInternal := stats.internalBlocked
     lastDevice := stats.lastDeviceDetected
     
-    ; Bluetooth判定ロジック（複合条件）
+    ; 厳格なBluetooth判定（デバイス名のみ）
     isBluetoothDevice := false
     
-    ; 条件1: デバイス名でBluetooth確認
+    ; 条件: デバイス名でBluetooth確認（LogitechのVID_046D専用）
     if (InStr(lastDevice, "HID") && InStr(lastDevice, "VID_046D")) {
         isBluetoothDevice := true
         if (DEBUG_MODE) {
             OutputDebug("✅ BLUETOOTH DEVICE DETECTED BY NAME: " lastDevice)
-        }
-    }
-    
-    ; 条件2: 統計比率での判定（緩和条件）
-    if (!isBluetoothDevice && totalBluetooth > 10 && totalBluetooth > totalInternal * 0.5) {
-        isBluetoothDevice := true
-        if (DEBUG_MODE) {
-            OutputDebug("✅ BLUETOOTH DEVICE DETECTED BY RATIO: BT=" totalBluetooth " IN=" totalInternal)
         }
     }
     
@@ -265,7 +248,7 @@ global lastDeviceCheckTime := 0  ; 最終デバイスチェック時刻
         stats.bluetoothAllowed++
         
         if (DEBUG_MODE) {
-            OutputDebug("✅ EMERGENCY: Left Ctrl BLUETOOTH PASSED")
+            OutputDebug("✅ Left Ctrl BLUETOOTH PASSED")
         }
         
         ; そのまま通す
@@ -279,24 +262,43 @@ global lastDeviceCheckTime := 0  ; 最終デバイスチェック時刻
     stats.internalBlocked++
     
     if (DEBUG_MODE) {
-        OutputDebug("🚫 EMERGENCY: Left Ctrl INTERNAL BLOCKED (BT=" totalBluetooth " IN=" totalInternal ")")
+        OutputDebug("🚫 Left Ctrl INTERNAL BLOCKED")
+    }
+    
+    ; 長押し検出（ハードウェアショート疑惑）
+    KeyWait("LCtrl")
+    pressedDuration := A_TickCount - ctrlPressStartTime
+    
+    if (pressedDuration > ctrlLongPressThreshold) {
+        ; 長押し検出: ハードウェアショートの可能性
+        if (DEBUG_MODE) {
+            OutputDebug("⚠️ 長押し検出: " pressedDuration "ms（ショート疑惑）")
+        }
+        
+        ; ショート疑惑カウント増加
+        if (!stats.HasOwnProp("longPressDetected")) {
+            stats.longPressDetected := 0
+        }
+        stats.longPressDetected++
+        
+        ; 警告表示（5回目以降は非表示）
+        if (stats.longPressDetected <= 5) {
+            TrayTip("⚠️ 長押し検出", "左Ctrl長押しを検出しました。`nハードウェアショートの可能性があります。`n手動リセット推奨（トレイメニュー）", 5)
+        }
     }
     
     ; ブロック（何もしない）
     return
 }
 
-; Shift+Left Ctrl緊急対応（修正版）
+; Shift+Left Ctrl厳格版
 +LCtrl::
 {
     global stats, DEBUG_MODE
     
-    ; 革新的判定: デバイス名 + 統計比率
-    totalBluetooth := stats.bluetoothAllowed
-    totalInternal := stats.internalBlocked
     lastDevice := stats.lastDeviceDetected
     
-    ; Bluetooth判定
+    ; 厳格なBluetooth判定（デバイス名のみ）
     isBluetoothDevice := false
     
     ; デバイス名でBluetooth確認
@@ -304,15 +306,10 @@ global lastDeviceCheckTime := 0  ; 最終デバイスチェック時刻
         isBluetoothDevice := true
     }
     
-    ; 統計比率での判定（緩和条件）
-    if (!isBluetoothDevice && totalBluetooth > 10 && totalBluetooth > totalInternal * 0.5) {
-        isBluetoothDevice := true
-    }
-    
     if (isBluetoothDevice) {
         ; Bluetoothキーボード: そのまま通す
         if (DEBUG_MODE) {
-            OutputDebug("✅ EMERGENCY Shift+Left Ctrl BLUETOOTH PASSED")
+            OutputDebug("✅ Shift+Left Ctrl BLUETOOTH PASSED")
         }
         SendInput("+{LCtrl}")
         return
@@ -322,7 +319,7 @@ global lastDeviceCheckTime := 0  ; 最終デバイスチェック時刻
     stats.shiftCtrlRemapped++
     
     if (DEBUG_MODE) {
-        OutputDebug("🔄 EMERGENCY Shift+Left Ctrl -> Shift+Right Ctrl REMAPPED")
+        OutputDebug("🔄 Shift+Left Ctrl -> Shift+Right Ctrl REMAPPED")
     }
     
     SendInput("+{RCtrl}")
@@ -350,7 +347,6 @@ ShowStatistics(*)
 {
     totalDevices := stats.deviceLog.Length
     uptime := Round((A_TickCount - stats.startTime) / 1000, 1)  ; 秒単位
-    periodicResets := stats.HasOwnProp("periodicResets") ? stats.periodicResets : 0
     
     ; ショート疑惑判定
     suspicionLevel := ""
@@ -378,6 +374,9 @@ ShowStatistics(*)
     ; 手動リセット回数
     manualResets := stats.HasOwnProp("manualResets") ? stats.manualResets : 0
     
+    ; 長押し検出回数
+    longPressDetected := stats.HasOwnProp("longPressDetected") ? stats.longPressDetected : 0
+    
     MsgBox(
         "📊 キーボード制御統計（診断モード）`n`n"
         "=== 基本統計 ===`n"
@@ -386,8 +385,8 @@ ShowStatistics(*)
         "✅ Bluetoothキーボード Left Ctrl 通過: " stats.bluetoothAllowed "`n"
         "🔍 検出デバイス総数: " totalDevices "`n"
         "⏱️ 起動時間: " uptime "秒`n"
-        "🔄 定期リセット実行回数: " periodicResets "回（30分ごと）`n"
-        "👆 手動リセット実行回数: " manualResets "回`n`n"
+        "� 手動リセット実行回数: " manualResets "回`n"
+        "⚠️ 長押し検出回数: " longPressDetected "回`n`n"
         "=== 受信間隔診断 ===`n"
         "📊 総信号数: " stats.intervalStats.total "`n"
         "⚡ 最小間隔: " (stats.intervalStats.min < 999999 ? stats.intervalStats.min : "-") "ms`n"
@@ -399,6 +398,7 @@ ShowStatistics(*)
         "=== 最新5件の信号間隔 ===`n"
         recentSignals "`n"
         "💡 診断: 高速連続信号が多い場合、ハードウェアショートの可能性`n"
+        "💡 長押し検出: 500ms以上の押下でショート疑惑として記録`n"
         "💡 リセット方式: 手動リセット（本体右Ctrl → K270左Ctrl）`n"
         "💡 手動リセット: トレイメニュー → 🔄 手動リセット",
         "統計情報（診断モード）",

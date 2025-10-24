@@ -1,34 +1,28 @@
-﻿#Requires AutoHotkey v2.0
-#SingleInstance Force
-Persistent
+#Requires AutoHotkey v2.0
+Persistent ; スクリプトを常駐させます
 
+; ライブラリを読み込みます
 #include Lib\AutoHotInterception.ahk
 
+; AutoHotInterceptionを初期化します
 global AHI := AutoHotInterception()
 
-; ノートPCのキーボードID「1」を直接指定
-targetKeyboardId := 1
+; --------------------------------------------------
+; VID/PIDの代わりに、Monitorに表示されていた「Handle」を使います
+; こちらの方が、ノートPCのキーボードをより確実に特定できます
+handle := "ACPI\VEN_MSI&DEV_1001"
+targetKeyboardId := AHI.GetKeyboardIdFromHandle(handle)
+; --------------------------------------------------
 
+; デバイスが見つかった場合のみ、以下の処理を実行します
 if (targetKeyboardId)
 {
-    ; キーボード「1」からの【すべての】キー入力を監視する
-    AHI.SubscribeKeyboard(targetKeyboardId, true, Func("KeyProcessor"))
+; 特定したキーボードの「左Ctrlキー」の入力を監視し、ブロックします
+AHI.SubscribeKey(targetKeyboardId, GetKeySC("LControl"), true, Func("BlockKey"))
 }
-else
+
+; キー入力を握りつぶすための空の関数
+BlockKey(state)
 {
-    MsgBox("指定されたIDのキーボードが見つかりませんでした。")
-}
-
-return
-
-; すべてのキー入力が、一度この関数を通る
-KeyProcessor(scanCode, state) {
-    ; もし、押されたキーのスキャンコードが左Ctrl（0x1D）だったら…
-    if (scanCode = 0x1D) {
-        ; このキー入力だけをブロックする（信号をここで止める）
-        return true
-    }
-
-    ; それ以外のキーは、ブロックせずに通常通り通す
-    return false
+; 何もしない
 }
